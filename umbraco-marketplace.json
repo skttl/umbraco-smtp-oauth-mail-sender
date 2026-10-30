@@ -1,0 +1,19 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "Title": "SMTP OAuth Mail Sender",
+  "Description": "Send Umbraco email through SMTP with Microsoft Entra OAuth authentication.",
+  "Category": "Developer Tools",
+  "LicenseTypes": [
+    "Free"
+  ],
+  "PackageType": "Package",
+  "DocumentationUrl": "https://github.com/skttl/umbraco-smtp-oauth-mail-sender/blob/main/docs/nuget-readme.md",
+  "IssueTrackerUrl": "https://github.com/skttl/umbraco-smtp-oauth-mail-sender/issues",
+  "Tags": [
+    "email",
+    "oauth",
+    "microsoft365",
+    "smtp"
+  ],
+  "VersionDependencyMode": "SemVer"
+}

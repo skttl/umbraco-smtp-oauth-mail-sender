@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Umbraco.Community.SmtpOAuthMailSender</PackageId>
+    <Authors>skttl</Authors>
+    <Description>SMTP OAuth email delivery for Umbraco, configured through existing SMTP settings.</Description>
+    <PackageTags>umbraco;umbraco-marketplace;email;oauth;smtp</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/skttl/umbraco-smtp-oauth-mail-sender</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/skttl/umbraco-smtp-oauth-mail-sender</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Core" Version="[13.0.0,14.0.0)" Condition="'$(UmbracoMajor)' == '13'" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="[17.0.0,18.0.0)" Condition="'$(UmbracoMajor)' == '17'" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="[18.0.0,19.0.0)" Condition="'$(UmbracoMajor)' == '18'" />
+    <PackageReference Include="Azure.Identity" Version="1.21.0" />
+    <PackageReference Include="MailKit" Version="4.18.1" />
+    <InternalsVisibleTo Include="Umbraco.Community.SmtpOAuthMailSender.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../docs/nuget-readme.md" Pack="true" PackagePath="README.md" />
+    <None Include="../../icon.png" Pack="true" PackagePath="icon.png" />
+    <None Include="../../THIRD-PARTY-NOTICES.txt" Pack="true" PackagePath="THIRD-PARTY-NOTICES.txt" />
+    <None Include="../../appsettings-schema.Umbraco.Community.SmtpOAuthMailSender.json" Pack="true" PackagePath="appsettings-schema.Umbraco.Community.SmtpOAuthMailSender.json" />
+    <None Include="../../buildTransitive/Umbraco.Community.SmtpOAuthMailSender.targets" Pack="true" PackagePath="buildTransitive/Umbraco.Community.SmtpOAuthMailSender.targets" />
+  </ItemGroup>
+  <Target Name="ValidateUmbracoMajor" BeforeTargets="PrepareForBuild" Condition="'$(UmbracoMajor)' != '13' and '$(UmbracoMajor)' != '17' and '$(UmbracoMajor)' != '18'">
+    <Error Text="UmbracoMajor must be 13, 17 or 18." />
+  </Target>
+</Project>

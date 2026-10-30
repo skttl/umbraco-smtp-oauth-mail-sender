@@ -1,0 +1,1 @@
+<Solution><Project Path="src/Umbraco.Community.SmtpOAuthMailSender/Umbraco.Community.SmtpOAuthMailSender.csproj" /><Project Path="tests/Umbraco.Community.SmtpOAuthMailSender.Tests/Umbraco.Community.SmtpOAuthMailSender.Tests.csproj" /><Project Path="examples/TestSite/TestSite.csproj" /></Solution>
